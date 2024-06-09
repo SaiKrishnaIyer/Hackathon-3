@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #edf1f5; /* Light blue background */
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: linear-gradient(to bottom right, #3ab1e9, #39d1e5); /* Gradient background */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+h1 {
+    text-align: center;
+    color: #003279; /* Teal color */
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+.contact-section {
+    padding: 20px;
+    margin-bottom: 40px;
+    background: linear-gradient(to bottom right, #22a6ed, #e0f2f1); /* Light gradient background */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-section p {
+    color: #003279; 
+    line-height: 1.8;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.contact-details p {
+    font-size: 1.2em;
+    color: #003279; /* Darker teal color */
+    margin: 10px 0;
+}
+
+.contact-details a {
+    color: #003279; /* Teal color for links */
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.contact-details a:hover {
+    color: #004d40; /* Darker teal on hover */
+}

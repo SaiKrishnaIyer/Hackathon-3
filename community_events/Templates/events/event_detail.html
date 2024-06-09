@@ -1,0 +1,22 @@
+<!-- templates/events/event_detail.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ event.title }}</title>
+</head>
+<body>
+    <h1>{{ event.title }}</h1>
+    <p>{{ event.description }}</p>
+    <p>Category: {{ event.category.name }}</p>
+    <p>Date: {{ event.date }}</p>
+    <p>Location: {{ event.location }}</p>
+    <a href="{% url 'rsvp_event' event.id %}">RSVP</a>
+    <h2>Reviews</h2>
+    <ul>
+        {% for review in event.review_set.all %}
+        <li>{{ review.user.username }}: {{ review.rating }}/5 - {{ review.comment }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'review_event' event.id %}">Leave a review</a>
+</body>
+</html>

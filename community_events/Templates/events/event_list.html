@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Community Events</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('https://png.pngtree.com/back_origin_pic/04/22/76/3bf918a3926c2525dd4aced5b62ba4ea.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #333;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            font-size: 3em;
+            margin-top: 20px;
+            color: #fff;
+        }
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        .box {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            margin: 10px;
+        }
+        .box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            border-radius: 0 0 10px 10px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .btn-custom {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .btn-custom:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+        .table-bordered th,
+        .table-bordered td {
+            border-color: #333;
+            font-weight: bold;
+        }
+        .table-actions {
+            display: flex;
+            align-items: center;
+        }
+        .btn-rsvp,
+        .btn-review {
+            margin-right: 10px;
+        }
+        .btn-rsvp {
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+        .btn-rsvp:hover {
+            background-color: #218838;
+            border-color: #218838;
+        }
+        .btn-review {
+            background-color: #ffc107;
+            border-color: #ffc107;
+        }
+        .btn-review:hover {
+            background-color: #e0a800;
+            border-color: #e0a800;
+        }
+        .alert-success {
+            margin-top: 20px;
+        }
+        .contact-section {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+        }
+        .contact-section h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .contact-details p {
+            font-size: 1.2em;
+        }
+        .contact-details i {
+            margin-right: 10px;
+        }
+        .about-section {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+        }
+        .about-section h1,
+        .about-section h2 {
+            text-align: center;
+        }
+        .about-section p,
+        .about-section ul {
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 style="color: black; font-weight: bold;">
+            <img src="https://dcassetcdn.com/design_img/3018555/682227/682227_16698000_3018555_258bb330_image.jpg" alt="Logo" style="height: 50px;"> <!-- Adjust the height as needed -->
+            OUR COMMUNITY EVENTS
+        </h1>
+        <a href="#about-us" class="btn btn-custom mt-4">About Us</a>
+    </div>    
+
+    <div class="content">
+        <div class="box">
+            <img src="https://www.team-bhp.com/forum/attachments/indian-car-scene/1965813d1580919571-great-wall-motors-auto-expo-2020-3.jpg" alt="CAR EXPO">
+            <div class="overlay">
+                <div class="text">CAR EXPO</div>
+            </div>
+        </div>
+        <div class="box">
+            <img src="https://creativeplanning.com/wp-content/uploads/2022/07/AdobeStock_425602403-blog.jpg" alt="E-SPORTS">
+            <div class="overlay">
+                <div class="text">E-SPORTS</div>
+            </div>
+        </div>
+        <div class="box">
+            <img src="https://th.bing.com/th/id/OIP.Csjjg3WknsbMDvYQ_3WpyQHaE8?w=640&h=427&rs=1&pid=ImgDetMain" alt="SPORTS EVENT">
+            <div class="overlay">
+                <div class="text">SPORTS EVENTS</div>
+            </div>
+        </div>
+        <div class="box">
+            <img src="https://www.tripfore.com/wp-content/uploads/2019/11/13.-Readers-Digest-1536x1024.jpg" alt="CULTURAL EVENTS">
+            <div class="overlay">
+                <div class="text">CULTURAL EVENTS</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <h1 class="mt-5">Local Community Events</h1>
+        <a href="{% url 'event_create' %}" class="btn btn-custom mt-4">Create Event</a>
+        <h2 class="mt-5">Upcoming Events</h2>
+        <table class="table table-bordered mt-3">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Location</th>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for event in events %}
+                <tr>
+                    <td>{{ event.name }}</td>
+                    <td>{{ event.category.name }}</td>
+                    <td>{{ event.location }}</td>
+                    <td>{{ event.date }}</td>
+                    <td>{{ event.description }}</td>
+                    <td class="table-actions">
+                        <form action="{% url 'rsvp' event.id %}" method="post">
+                            {% csrf_token %}
+                            <input type="text" name="user_name" placeholder="Your Name" required>
+                            <button type="submit" class="btn btn-rsvp btn-sm">RSVP</button>
+                        </form>
+                        <form action="{% url 'review' event.id %}" method="post">
+                            {% csrf_token %}
+                            <input type="text" name="user_name" placeholder="Your Name" required>
+                            <input type="number" name="rating" min="1" max="5" required>
+                            <input type="text" name="comment" placeholder="Your Comment">
+                            <button type="submit" class="btn btn-review btn-sm">Review</button>
+                        </form>
+                        {% if request.session.review_submitted %}
+                        <div class="alert alert-success" role="alert">
+                            Review submitted successfully!
+                        </div>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container contact-section">
+        <h1 style="font-family: 'Arial Black', sans-serif; font-size: 2.5em;">Contact Us</h1>
+        <p style="font-family: 'Georgia', serif; font-size: 1.2em;">
+            If you have any questions or suggestions, feel free to reach out to us through the contact details below. We are here to help and would love to hear from you!
+        </p>
+        <div class="contact-details" style="font-family: 'Courier New', monospace; font-size: 1.1em;">
+            <p><strong><i class="fas fa-envelope"></i> Email:</strong> <a href="mailto:varun@gmail.com">varun@gmail.com</a></p>
+            <p><strong><i class="fas fa-phone"></i> Phone:</strong> <a href="tel:+91 8143131510">8143131510</a></p>
+            <p><strong><i class="fas fa-home"></i> Address:</strong> BHEL Old MIG Plot No. 101 R.C. Puram, Hyderabad, Telangana</p>
+        </div>
+    </div>
+
+    <div class="container about-section" id="about-us">
+        <h1>About Us</h1>
+        <h2>Event Management Team</h2>
+        <p>We are a dedicated team committed to organizing and managing community events. Our goal is to bring people together and create memorable experiences through a variety of events such as sports, cultural activities, and exhibitions.</p>
+        <h2>Our Mission</h2>
+        <p>To foster community spirit and engagement by providing a platform for local events that cater to diverse interests and promote social interaction.</p>
+        <h2>Our Vision</h2>
+        <ul>
+            <li>To be the leading community events organizer known for excellence and innovation.</li>
+            <li>To create a vibrant and connected community through inclusive and accessible events.</li>
+            <li>To support local talent and provide opportunities for collaboration and growth.</li>
+        </ul>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>
