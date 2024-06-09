@@ -46,6 +46,10 @@ The client-side architecture of the app is built using HTML, CSS, and JavaScript
 
 The server-side of the app is powered by Django, a high-level Python web framework. It follows a Model-View-Template (MVT) architecture, where models define the data structure, views handle the business logic, and templates render the user interface.
 
+![image](https://github.com/SaiKrishnaIyer/Hackathon-3/assets/113880966/9a7ad9a6-232f-4721-9392-f2e27dfa723b)
+![image](https://github.com/SaiKrishnaIyer/Hackathon-3/assets/113880966/4f0a88a5-b938-496a-bb20-f9c24d3cda65)
+
+
 ## Technology Stack
 
 - Frontend: HTML, CSS, JavaScript, Bootstrap
@@ -96,9 +100,14 @@ Follow the instructions in the README.md file of the project repository to insta
 - `urls.py`: URL configuration for routing requests
 - `views.py`: Business logic for handling user requests
 
+
 ## Database Schema
 
 The database schema includes tables for events, users, reviews, and RSVPs. Refer to the database documentation for detailed schema information.
+
+![image](https://github.com/SaiKrishnaIyer/Hackathon-3/assets/113880966/ac011467-c04e-44f4-bb44-5c07bb05bd2d)
+![image](https://github.com/SaiKrishnaIyer/Hackathon-3/assets/113880966/0645d8fe-93e0-4564-8e15-736d964f3eff)
+![image](https://github.com/SaiKrishnaIyer/Hackathon-3/assets/113880966/6febe67e-cc41-4ee6-b958-b14017a4b0e2)
 
 ## API Reference
 
